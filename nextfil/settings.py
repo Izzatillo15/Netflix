@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 import django_heroku
-django_heroku.settings(locals())
+
 
 
 
@@ -127,6 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -141,3 +142,5 @@ try:
     MIDDLEWARE.append('whitenoise.middleware.WhiteNoiseMiddleware',)
 except ImportError:
     pass
+
+django_heroku.settings(locals())
